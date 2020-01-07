@@ -1,0 +1,31 @@
+<div class="container">
+  <h3>List All Product</h3>
+  <button type="button" class="btn btn-success" [routerLink]="[ '/create']">Add Product</button>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Image</th>
+      <th scope="col">Title</th>
+      <th scope="col">ShortDescription</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of productData">
+      <td>{{item.id}}</td>
+      <td>
+        <img [src]="item.image" alt="no image" height="80"/>
+      </td>
+      <td>{{item.title}}</td>
+      <td>{{item.shortDescription}}</td>
+      <td style="display: flex">
+        <button type="button" class="btn btn-warning btn-sm" [routerLink]="['/edit', item.id]">Edit</button>
+        <button type="button" class="btn btn-danger btn-sm ml-1" (click)="delete(item)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+    <button type="button" class="btn btn-success" [routerLink]="[ '/create']">Add Product</button>
+</div>
