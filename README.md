@@ -28,9 +28,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # product-web
 
 
-##web route
-  { path: 'create', component: ProductComponent },
-  { path: 'list', component: ProductListComponent },
-  { path: 'edit/:id', component: ProductEditComponent },
-  { path: 'listing', component: ProductListingComponent },
-  { path: 'details/:id', component: ListingDetailsComponent },
+##web route . 
+  { path: 'create', component: ProductComponent },  
+  { path: 'list', component: ProductListComponent },  
+  { path: 'edit/:id', component: ProductEditComponent },  
+  { path: 'listing', component: ProductListingComponent },  
+  { path: 'details/:id', component: ListingDetailsComponent },  
