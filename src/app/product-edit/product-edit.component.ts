@@ -12,6 +12,7 @@ export class ProductEditComponent implements OnInit {
 
   id: number;
   data: Product;
+  error: string;
 
   constructor(
     public activatedRoute: ActivatedRoute,
@@ -31,9 +32,14 @@ export class ProductEditComponent implements OnInit {
   }
 
   update() {
-    this.apiService.updateItem(this.id, this.data).subscribe(response => {
-      this.router.navigate(['list']);
-    });
+    this.apiService.updateItem(this.id, this.data).subscribe(
+      (response) => {
+        this.error = '';
+        this.router.navigate(['list']);
+      },
+        (error) => {
+          this.error = error;
+      }
+    );
   }
-
 }

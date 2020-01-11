@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class ProductComponent implements OnInit {
 
   data: Product;
+  error: string;
   constructor(
     public apiService: ApiService,
     public router: Router
@@ -24,9 +25,15 @@ export class ProductComponent implements OnInit {
   }
 
   submitForm() {
-    this.apiService.createItem(this.data).subscribe((response) => {
-      this.router.navigate(['list']);
-    });
+    this.apiService.createItem(this.data).subscribe(
+      (response) => {
+        this.error = '';
+        this.router.navigate(['list']);
+      },
+      (error) => {
+        this.error = error;
+      }
+    );
 
   }
 

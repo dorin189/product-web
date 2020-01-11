@@ -1,8 +1,7 @@
-<p>product-edit works!</p>
 
 <div class="container">
 
-  <h3>Edit Product Record</h3>
+  <h3 class="mt-5">Edit Product Record</h3>
 
   <div class="form-group">
     <label for="url">Product Image</label>
@@ -33,4 +32,8 @@
   </div>
   <button type="submit" class="btn btn-success" (click)="update()">Update</button>
   <button type="submit" class="btn btn-warning ml-1" [routerLink]="[ '/list']">Cancel</button>
+
+  <div class="alert alert-danger" role="alert" *ngIf="error" style="margin-top: 14px">
+    {{error}}
+  </div>
 </div>

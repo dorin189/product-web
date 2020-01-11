@@ -1,20 +1,20 @@
 <div class="container">
 
-  <h3>Create New Product</h3>
+  <h3 class="mt-5">Create New Product</h3>
   <div class="form-group">
-    <label for="url">Product Image</label>
+    <label for="url">Product Image <span class="star-alert">*</span></label>
     <input type="text" class="form-control" id="url" [(ngModel)]="data.image" placeholder="Enter Url Image">
   </div>
   <div class="form-group">
-    <label for="title">Product Title</label>
+    <label for="title">Product Title <span class="star-alert">*</span></label>
     <input type="text" class="form-control" id="title" [(ngModel)]="data.title" placeholder="Enter Title">
   </div>
   <div class="form-group">
-    <label for="short">Enter Short Description</label>
+    <label for="short">Enter Short Description <span class="star-alert">*</span></label>
     <input type="text" class="form-control" id="short" [(ngModel)]="data.shortDescription" placeholder="Enter Short Description">
   </div>
   <div class="form-group">
-    <label for="price">Price</label>
+    <label for="price">Price <span class="star-alert">*</span></label>
     <input type="text" class="form-control" id="price" [(ngModel)]="data.price" placeholder="Enter Price">
   </div>
   <div class="form-group">
@@ -28,5 +28,8 @@
       <option [ngValue]="0">nu</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary" (click)="submitForm()">Add</button>
+  <button type="submit" class="btn btn-primary" (click)="submitForm()" >Add</button>
+  <div class="alert alert-danger" role="alert" *ngIf="error" style="margin-top: 14px">
+    {{error}}
+  </div>
 </div>
